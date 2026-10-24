@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riad Mahmud Joy | Web Developer & Digital Marketing Expert</title>
+  <meta name="description" content="Riad Mahmud Joy - Expert Web Designer, Developer & Digital Marketing Specialist. Transform your digital presence with stunning websites and powerful marketing strategies." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">RMJ</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" onclick="showPage('home')">
+        <span class="logo-text">R<span class="accent">MJ</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" onclick="showPage('home');closeMobileMenu()">Home</a></li>
+        <li><a href="#about" class="nav-link" onclick="showPage('about');closeMobileMenu()">About</a></li>
+        <li><a href="#services" class="nav-link" onclick="showPage('services');closeMobileMenu()">Services</a></li>
+        <li><a href="#portfolio" class="nav-link" onclick="showPage('portfolio');closeMobileMenu()">Portfolio</a></li>
+        <li><a href="#testimonials" class="nav-link" onclick="showPage('testimonials');closeMobileMenu()">Reviews</a></li>
+        <li><a href="#contact" class="nav-link" onclick="showPage('contact');closeMobileMenu()">Contact</a></li>
+        <li><a href="#contact" class="nav-cta" onclick="showPage('contact');closeMobileMenu()">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== PAGE: HOME ====== -->
+  <section class="page active" id="home">
+    <div class="hero-section">
+      <div class="hero-bg-glow glow-1"></div>
+      <div class="hero-bg-glow glow-2"></div>
+      <div class="hero-bg-glow glow-3"></div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available for Work
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Riad Mahmud Joy</span>
+          </h1>
+          <div class="hero-typed">
+            I'm a <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+          </div>
+          <p class="hero-desc">
+            I craft pixel-perfect websites and result-driven digital marketing strategies that elevate brands to new heights. Let's build something extraordinary together.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="150">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Projects Done</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="80">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="showPage('portfolio')">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn-secondary" onclick="showPage('contact')">
+              <span>Let's Talk</span>
+              <i class="fas fa-comment-dots"></i>
+            </button>
+          </div>
+          <div class="hero-socials">
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Fiverr"><i class="fab fa-dev"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap">
+          <div class="hero-image-card">
+            <div class="image-ring ring-1"></div>
+            <div class="image-ring ring-2"></div>
+            <div class="image-ring ring-3"></div>
+            <div class="hero-img-container">
+              <img src="profile.jpg" alt="Riad Mahmud Joy" class="hero-img" />
+            </div>
+            <!-- Floating badges -->
+            <div class="float-badge badge-web">
+              <i class="fas fa-code"></i>
+              <span>Web Dev</span>
+            </div>
+            <div class="float-badge badge-marketing">
+              <i class="fas fa-chart-line"></i>
+              <span>Marketing</span>
+            </div>
+            <div class="float-badge badge-rating">
+              <div class="stars">★★★★★</div>
+              <span>5.0 Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" onclick="showPage('about')">
+        <div class="scroll-dot"></div>
+        <span>Scroll Down</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAGE: ABOUT ====== -->
+  <section class="page" id="about">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-tag">Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">Passionate developer & marketer building digital experiences that convert</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image-col">
+          <div class="about-img-frame">
+            <img src="profile.jpg" alt="Riad Mahmud Joy" class="about-img" />
+            <div class="about-img-decor"></div>
+            <div class="experience-badge-about">
+              <span class="exp-num">5+</span>
+              <span class="exp-text">Years of<br/>Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content-col">
+          <div class="about-intro">
+            <h3>Web Designer, Developer & <span class="gradient-text">Digital Strategist</span></h3>
+            <p>
+              I'm <strong>Riad Mahmud Joy</strong>, a multi-disciplinary digital professional specializing in creating visually stunning, high-performance websites and crafting data-driven digital marketing campaigns that deliver real results.
+            </p>
+            <p>
+              With a deep passion for design aesthetics and technical excellence, I bridge the gap between beautiful design and powerful functionality — helping businesses grow their online presence and achieve measurable success.
+            </p>
+          </div>
+
+          <div class="about-details">
+            <div class="detail-item"><i class="fas fa-user"></i> <strong>Name:</strong> Riad Mahmud Joy</div>
+            <div class="detail-item"><i class="fas fa-briefcase"></i> <strong>Role:</strong> Web Developer & Digital Marketer</div>
+            <div class="detail-item"><i class="fas fa-globe"></i> <strong>Availability:</strong> Worldwide (Remote)</div>
+            <div class="detail-item"><i class="fas fa-language"></i> <strong>Languages:</strong> English, Bangla</div>
+          </div>
+
+          <div class="skills-section">
+            <h4>Core Skills</h4>
+            <div class="skill-bars">
+              <div class="skill-bar">
+                <div class="skill-info"><span>Web Design (UI/UX)</span><span>95%</span></div>
+                <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-info"><span>Front-End Development</span><span>92%</span></div>
+                <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-info"><span>WordPress / CMS</span><span>90%</span></div>
+                <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-info"><span>Digital Marketing (SEO/SEM)</span><span>88%</span></div>
+                <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-info"><span>Social Media Marketing</span><span>93%</span></div>
+                <div class="skill-track"><div class="skill-fill" data-width="93"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#" download class="btn-primary">
+              <i class="fas fa-download"></i>
+              <span>Download CV</span>
+            </a>
+            <button class="btn-secondary" onclick="showPage('contact')">
+              <i class="fas fa-envelope"></i>
+              <span>Hire Me</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-stack-section">
+        <h3 class="tech-title">Technologies & Tools</h3>
+        <div class="tech-grid">
+          <div class="tech-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+          <div class="tech-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+          <div class="tech-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+          <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+          <div class="tech-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+          <div class="tech-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+          <div class="tech-item"><i class="fab fa-php"></i><span>PHP</span></div>
+          <div class="tech-item"><i class="fab fa-google"></i><span>Google Ads</span></div>
+          <div class="tech-item"><i class="fab fa-facebook"></i><span>Meta Ads</span></div>
+          <div class="tech-item"><i class="fas fa-search"></i><span>SEO</span></div>
+          <div class="tech-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+          <div class="tech-item"><i class="fab fa-sass"></i><span>SASS</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAGE: SERVICES ====== -->
+  <section class="page" id="services">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-tag">What I Offer</span>
+        <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+        <p class="section-subtitle">End-to-end digital solutions tailored to your business needs</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card featured">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="service-badge">Most Popular</div>
+          <h3>Web Design & Development</h3>
+          <p>Custom, pixel-perfect websites built from scratch with modern technologies. Responsive, fast-loading, and SEO-optimized designs that convert visitors into clients.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Custom UI/UX Design</li>
+            <li><i class="fas fa-check"></i> Responsive & Mobile-First</li>
+            <li><i class="fas fa-check"></i> Lightning Fast Performance</li>
+            <li><i class="fas fa-check"></i> SEO Optimized Structure</li>
+            <li><i class="fas fa-check"></i> Cross-Browser Compatible</li>
+          </ul>
+          <a href="#" class="service-cta" onclick="showPage('contact')">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+          <h3>WordPress Development</h3>
+          <p>Professional WordPress websites with custom themes, plugins, and WooCommerce integration. Powerful, scalable, and easy to manage CMS solutions.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Custom Theme Development</li>
+            <li><i class="fas fa-check"></i> WooCommerce Store Setup</li>
+            <li><i class="fas fa-check"></i> Plugin Development</li>
+            <li><i class="fas fa-check"></i> Speed Optimization</li>
+            <li><i class="fas fa-check"></i> Security Hardening</li>
+          </ul>
+          <a href="#" class="service-cta" onclick="showPage('contact')">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Digital Marketing</h3>
+          <p>Data-driven marketing campaigns that maximize ROI. From SEO to paid advertising, I help your brand reach the right audience at the right time.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Search Engine Optimization</li>
+            <li><i class="fas fa-check"></i> Google Ads Management</li>
+            <li><i class="fas fa-check"></i> Facebook & Instagram Ads</li>
+            <li><i class="fas fa-check"></i> Content Marketing</li>
+            <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+          </ul>
+          <a href="#" class="service-cta" onclick="showPage('contact')">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>Stunning, user-centered interface designs that deliver exceptional user experiences. From wireframes to high-fidelity prototypes with Figma.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Wireframing & Prototyping</li>
+            <li><i class="fas fa-check"></i> User Research & Testing</li>
+            <li><i class="fas fa-check"></i> Design System Creation</li>
+            <li><i class="fas fa-check"></i> Brand Identity Design</li>
+            <li><i class="fas fa-check"></i> Figma Design Files</li>
+          </ul>
+          <a href="#" class="service-cta" onclick="showPage('contact')">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-share-nodes"></i></div>
+          <h3>Social Media Management</h3>
+          <p>Strategic social media management that builds brand authority, grows your following, and drives meaningful engagement across all platforms.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Content Strategy</li>
+            <li><i class="fas fa-check"></i> Post Scheduling</li>
+            <li><i class="fas fa-check"></i> Community Management</li>
+            <li><i class="fas fa-check"></i> Growth Hacking</li>
+            <li><i class="fas fa-check"></i> Monthly Reports</li>
+          </ul>
+          <a href="#" class="service-cta" onclick="showPage('contact')">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>E-Commerce Solutions</h3>
+          <p>Complete e-commerce websites built to sell. From product listings to secure checkout, I build stores that drive sales and grow your revenue.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> WooCommerce / Shopify</li>
+            <li><i class="fas fa-check"></i> Payment Gateway Setup</li>
+            <li><i class="fas fa-check"></i> Product Management</li>
+            <li><i class="fas fa-check"></i> Inventory System</li>
+            <li><i class="fas fa-check"></i> Conversion Optimization</li>
+          </ul>
+          <a href="#" class="service-cta" onclick="showPage('contact')">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Process Section -->
+      <div class="process-section">
+        <h3 class="section-mini-title">My Work <span class="gradient-text">Process</span></h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="fas fa-comments"></i></div>
+            <h4>Discovery</h4>
+            <p>Understanding your goals, target audience, and project requirements</p>
+          </div>
+          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+            <h4>Design</h4>
+            <p>Creating wireframes and high-fidelity designs for your approval</p>
+          </div>
+          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="fas fa-code"></i></div>
+            <h4>Develop</h4>
+            <p>Building your project with clean, optimized, and scalable code</p>
+          </div>
+          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-icon"><i class="fas fa-rocket"></i></div>
+            <h4>Launch</h4>
+            <p>Testing, deploying, and launching your project to the world</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAGE: PORTFOLIO ====== -->
+  <section class="page" id="portfolio">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-tag">My Work</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">A curated selection of my best work across web design and digital marketing</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+        <button class="filter-btn" onclick="filterProjects('web', this)">Web Design</button>
+        <button class="filter-btn" onclick="filterProjects('marketing', this)">Marketing</button>
+        <button class="filter-btn" onclick="filterProjects('ecommerce', this)">E-Commerce</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Project 1 -->
+        <div class="project-card" data-category="web">
+          <div class="project-img-wrap">
+            <div class="project-placeholder web-placeholder">
+              <i class="fas fa-laptop-code"></i>
+              <span>Business Website</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-eye"></i></a>
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>UI/UX</span></div>
+            <h3>LuxeCorp Business Website</h3>
+            <p>A premium corporate website with modern animations, seamless navigation, and conversion-optimized landing pages.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="ecommerce">
+          <div class="project-img-wrap">
+            <div class="project-placeholder ecom-placeholder">
+              <i class="fas fa-shopping-bag"></i>
+              <span>E-Commerce Store</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-eye"></i></a>
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span></div>
+            <h3>FashionHub Online Store</h3>
+            <p>Full-featured fashion e-commerce with 500+ products, advanced filtering, and 40% increase in sales.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="marketing">
+          <div class="project-img-wrap">
+            <div class="project-placeholder mkt-placeholder">
+              <i class="fas fa-chart-pie"></i>
+              <span>Marketing Campaign</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-eye"></i></a>
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Google Ads</span><span>SEO</span><span>Analytics</span></div>
+            <h3>TechStart Marketing Strategy</h3>
+            <p>Comprehensive digital marketing campaign achieving 320% ROI and 15,000+ monthly organic visitors.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="web">
+          <div class="project-img-wrap">
+            <div class="project-placeholder web2-placeholder">
+              <i class="fas fa-hospital"></i>
+              <span>Healthcare Portal</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-eye"></i></a>
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>React</span><span>Node.js</span><span>UI/UX</span></div>
+            <h3>MedCare Patient Portal</h3>
+            <p>Modern healthcare platform with appointment booking, patient dashboards, and HIPAA-compliant design.</p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-category="marketing">
+          <div class="project-img-wrap">
+            <div class="project-placeholder social-placeholder">
+              <i class="fas fa-share-nodes"></i>
+              <span>Social Media</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-eye"></i></a>
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Facebook Ads</span><span>Instagram</span><span>Strategy</span></div>
+            <h3>BeautyBrand Social Growth</h3>
+            <p>Social media strategy that grew followers from 2K to 85K in 6 months with 5x engagement rate.</p>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-category="ecommerce">
+          <div class="project-img-wrap">
+            <div class="project-placeholder rest-placeholder">
+              <i class="fas fa-utensils"></i>
+              <span>Restaurant Website</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-eye"></i></a>
+                <a href="#" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>WordPress</span><span>Online Ordering</span><span>Mobile</span></div>
+            <h3>GourmetBite Restaurant Platform</h3>
+            <p>Restaurant website with online ordering system, table reservations, and menu management CMS.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="portfolio-cta">
+        <p>Want to see more? Let's discuss your project!</p>
+        <button class="btn-primary" onclick="showPage('contact')">
+          <span>Start a Project</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAGE: TESTIMONIALS ====== -->
+  <section class="page" id="testimonials">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-tag">Client Love</span>
+        <h2 class="section-title">What Clients <span class="gradient-text">Say</span></h2>
+        <p class="section-subtitle">Real feedback from real clients who trusted me with their vision</p>
+      </div>
+
+      <!-- Overall Rating -->
+      <div class="overall-rating">
+        <div class="rating-score">
+          <span class="big-score">5.0</span>
+          <div class="rating-stars">★★★★★</div>
+          <span class="rating-label">Overall Rating</span>
+        </div>
+        <div class="rating-breakdown">
+          <div class="rating-bar-row"><span>Communication</span><div class="rbar"><div class="rbar-fill" style="width:98%"></div></div><span>4.9</span></div>
+          <div class="rating-bar-row"><span>Service Quality</span><div class="rbar"><div class="rbar-fill" style="width:100%"></div></div><span>5.0</span></div>
+          <div class="rating-bar-row"><span>Value for Money</span><div class="rbar"><div class="rbar-fill" style="width:96%"></div></div><span>4.8</span></div>
+          <div class="rating-bar-row"><span>Would Recommend</span><div class="rbar"><div class="rbar-fill" style="width:100%"></div></div><span>5.0</span></div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="test-top">
+            <div class="test-avatar av1">JM</div>
+            <div class="test-meta">
+              <strong>James Mitchell</strong>
+              <span>CEO, TechStart Inc.</span>
+              <div class="test-stars">★★★★★</div>
+            </div>
+            <div class="test-quote-icon"><i class="fas fa-quote-right"></i></div>
+          </div>
+          <p>"Riad delivered an absolutely stunning website that exceeded all our expectations. His attention to detail and understanding of our brand was remarkable. Our conversion rate increased by 67% after launch!"</p>
+          <div class="test-footer">
+            <span class="test-project"><i class="fas fa-tag"></i> Web Development</span>
+            <span class="test-date">October 2026</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card featured-test">
+          <div class="test-top">
+            <div class="test-avatar av2">SK</div>
+            <div class="test-meta">
+              <strong>Sarah Kim</strong>
+              <span>Founder, BeautyBrand</span>
+              <div class="test-stars">★★★★★</div>
+            </div>
+            <div class="test-quote-icon"><i class="fas fa-quote-right"></i></div>
+          </div>
+          <p>"Working with Riad was the best investment I made for my business. His digital marketing expertise is top-notch — we went from 0 to 85K followers and our monthly revenue tripled in just 6 months!"</p>
+          <div class="test-footer">
+            <span class="test-project"><i class="fas fa-tag"></i> Digital Marketing</span>
+            <span class="test-date">September 2026</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-top">
+            <div class="test-avatar av3">AL</div>
+            <div class="test-meta">
+              <strong>Ahmed Larbi</strong>
+              <span>Owner, FashionHub</span>
+              <div class="test-stars">★★★★★</div>
+            </div>
+            <div class="test-quote-icon"><i class="fas fa-quote-right"></i></div>
+          </div>
+          <p>"The WooCommerce store Riad built is flawless. He understood my requirements perfectly and delivered ahead of schedule. Sales increased by 40% in the first month. Highly professional and skilled!"</p>
+          <div class="test-footer">
+            <span class="test-project"><i class="fas fa-tag"></i> E-Commerce</span>
+            <span class="test-date">August 2026</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-top">
+            <div class="test-avatar av4">MR</div>
+            <div class="test-meta">
+              <strong>Maria Rodriguez</strong>
+              <span>Marketing Director</span>
+              <div class="test-stars">★★★★★</div>
+            </div>
+            <div class="test-quote-icon"><i class="fas fa-quote-right"></i></div>
+          </div>
+          <p>"Riad's SEO work transformed our online visibility. We went from page 5 to page 1 on Google for our main keywords within 3 months. His strategies are truly data-driven and results-focused."</p>
+          <div class="test-footer">
+            <span class="test-project"><i class="fas fa-tag"></i> SEO</span>
+            <span class="test-date">July 2026</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-top">
+            <div class="test-avatar av5">DW</div>
+            <div class="test-meta">
+              <strong>David Wilson</strong>
+              <span>Startup Founder</span>
+              <div class="test-stars">★★★★★</div>
+            </div>
+            <div class="test-quote-icon"><i class="fas fa-quote-right"></i></div>
+          </div>
+          <p>"Incredible UI/UX designer! Riad created a stunning app design that our users absolutely love. The design is intuitive, modern, and perfectly aligned with our brand identity."</p>
+          <div class="test-footer">
+            <span class="test-project"><i class="fas fa-tag"></i> UI/UX Design</span>
+            <span class="test-date">June 2026</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-top">
+            <div class="test-avatar av6">PT</div>
+            <div class="test-meta">
+              <strong>Priya Tanaka</strong>
+              <span>Restaurant Owner</span>
+              <div class="test-stars">★★★★★</div>
+            </div>
+            <div class="test-quote-icon"><i class="fas fa-quote-right"></i></div>
+          </div>
+          <p>"My restaurant website and online ordering system are simply perfect. Riad was responsive, creative, and incredibly professional throughout the entire project. Will definitely work with him again!"</p>
+          <div class="test-footer">
+            <span class="test-project"><i class="fas fa-tag"></i> Web + E-Commerce</span>
+            <span class="test-date">May 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trusted by brands -->
+      <div class="trusted-section">
+        <p class="trusted-label">Trusted by 80+ businesses worldwide</p>
+        <div class="trusted-logos">
+          <div class="brand-logo"><i class="fab fa-shopify"></i> Shopify Partner</div>
+          <div class="brand-logo"><i class="fab fa-wordpress"></i> WP Expert</div>
+          <div class="brand-logo"><i class="fab fa-google"></i> Google Partner</div>
+          <div class="brand-logo"><i class="fab fa-meta"></i> Meta Partner</div>
+          <div class="brand-logo"><i class="fab fa-figma"></i> Figma Expert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAGE: CONTACT ====== -->
+  <section class="page" id="contact">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+        <p class="section-subtitle">Have a project in mind? Let's create something amazing together!</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Contact Info -->
+        <div class="contact-info-col">
+          <div class="contact-intro">
+            <h3>Ready to elevate your <span class="gradient-text">digital presence?</span></h3>
+            <p>Whether you need a brand-new website, a digital marketing strategy, or a complete online overhaul — I'm here to make it happen. Let's connect and discuss how I can help your business grow.</p>
+          </div>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="cm-icon"><i class="fas fa-envelope"></i></div>
+              <div class="cm-info">
+                <span>Email Me</span>
+                <a href="mailto:riad@example.com">riad@example.com</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="cm-icon"><i class="fas fa-phone"></i></div>
+              <div class="cm-info">
+                <span>Call / WhatsApp</span>
+                <a href="tel:+8801XXXXXXXXX">+880 1X-XXXX-XXXX</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="cm-icon"><i class="fas fa-clock"></i></div>
+              <div class="cm-info">
+                <span>Working Hours</span>
+                <strong>Mon–Sat, 9AM – 10PM (BST)</strong>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="cm-icon"><i class="fas fa-reply"></i></div>
+              <div class="cm-info">
+                <span>Response Time</span>
+                <strong>Within 2 hours</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <p>Follow me on social media</p>
+            <div class="social-links">
+              <a href="#" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank" rel="noopener" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank" rel="noopener" class="social-link" aria-label="Behance"><i class="fab fa-behance"></i></a>
+              <a href="#" target="_blank" rel="noopener" class="social-link" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            </div>
+          </div>
+
+          <div class="availability-card">
+            <div class="avail-dot"></div>
+            <div>
+              <strong>Available for New Projects</strong>
+              <p>Currently accepting new clients for Q4 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-col">
+          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Web Design Project" required />
+            </div>
+            <div class="form-group">
+              <label>Service Needed</label>
+              <select>
+                <option value="">Select a Service...</option>
+                <option>Web Design & Development</option>
+                <option>WordPress Development</option>
+                <option>Digital Marketing</option>
+                <option>UI/UX Design</option>
+                <option>Social Media Management</option>
+                <option>E-Commerce Solution</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Budget Range</label>
+              <select>
+                <option value="">Select Budget...</option>
+                <option>\$100 – \$500</option>
+                <option>\$500 – \$1,000</option>
+                <option>\$1,000 – \$5,000</option>
+                <option>\$5,000 – \$10,000</option>
+                <option>\$10,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Project Details</label>
+              <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I'll get back to you within 2 hours!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">R<span class="accent">MJ</span></span>
+          <p>Crafting digital experiences that inspire, engage, and convert. Let's build something extraordinary together.</p>
+          <div class="footer-socials">
+            <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#" onclick="showPage('home')">Home</a></li>
+              <li><a href="#" onclick="showPage('about')">About</a></li>
+              <li><a href="#" onclick="showPage('services')">Services</a></li>
+              <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
+              <li><a href="#" onclick="showPage('testimonials')">Reviews</a></li>
+              <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">WordPress</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">SEO Services</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Let's Connect</h4>
+            <ul>
+              <li><a href="mailto:riad@example.com"><i class="fas fa-envelope"></i> riad@example.com</a></li>
+              <li><a href="tel:+8801XXXXXXXXX"><i class="fas fa-phone"></i> +880 1X-XXXX-XXXX</a></li>
+              <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+              <li><a href="#"><i class="fab fa-fiverr"></i> Fiverr Profile</a></li>
+              <li><a href="#"><i class="fab fa-upwork"></i> Upwork Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 <strong>Riad Mahmud Joy</strong>. All rights reserved.</p>
+        <p>Designed & Developed with <span class="heart">♥</span> by Riad Mahmud Joy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
